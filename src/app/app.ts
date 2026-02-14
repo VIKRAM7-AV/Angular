@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit{
   title="Angular nkknJs";
 
   getName (){
@@ -16,6 +16,20 @@ export class App {
   };
 
   ImageURl="https://picsum.photos/200/300";
-  Imagealt="Okk"
+  Imagealt="Okk";
+
+  User:any=null;
+
+  ngOnInit (){
+    this.User={
+      age :39
+    }
+  }
+
+  countNumber =0;
+
+  CLickMe(){
+    this.countNumber++;
+  }
 
 }
